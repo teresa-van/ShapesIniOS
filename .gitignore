@@ -1,0 +1,32 @@
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# User-specific files (MonoDevelop/Xamarin Studio)
+*.userprefs
+
+# Unity
+Unity/.vs/
+Unity/Library/
+Unity/Temp/
+Unity/Obj/
+Unity/Build/
+Unity/Assets/AssetStoreTools*
+Unity/App
+Unity/ExportedObj/
+Unity/.consulo/
+Unity/*.csproj
+Unity/*.unityproj
+Unity/*.sln
+Unity/*.suo
+Unity/*.tmp
+Unity/*.user
+Unity/*.userprefs
+Unity/*.pidb
+Unity/*.booproj
+Unity/*.svd
+Unity/*.pidb.meta
+Unity/sysinfo.txt
+!*.*.meta
