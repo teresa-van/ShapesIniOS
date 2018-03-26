@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 669bdb35a8ad4c54d96428e948db2832
+timeCreated: 1506983081
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - panelPrefab: {fileID: 1250004811155402, guid: 8586068306978e443b8803eae846d599,
+      type: 2}
+  - glow: {fileID: 2100000, guid: c1d9d5ccda34bf444a354de131ada8e5, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

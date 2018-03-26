@@ -1,0 +1,396 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GraphLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:GraphLibrary.ColorSchemeType">
+            <summary>
+            Describes the different types of color schemes
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.ColorSchemeType.Categorical">
+            <summary>
+            Used for distinct coloring
+            Accent, Dark2, Paired, Pastel1, Pastel2, Set1, Set2, Set3
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.ColorSchemeType.Diverging">
+            <summary>
+            Diverges from specific color to white to another color
+            BrBG, PRGn, PiYG, PuOr, RdBu, RdGy, RdYlBu, RdYlGn, Spectral
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.ColorSchemeType.Sequential_Single">
+            <summary>
+            Single color spectrums
+            Blues, Greens, Greys, Oranges, Purples, Reds
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.ColorSchemeType.Sequential_Multi">
+            <summary>
+            Multi color spectrums
+            BuGn, BuPn, GnBu, OrRd, PuBuGn, PuBu, PuRd, RdPu, YlGnBu, YlGn, YlOrBr, YlOrRd
+            </summary>
+        </member>
+        <member name="T:GraphLibrary.ColorBrewer">
+            <summary>
+            Color scheme class
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.ColorBrewer.colorList">
+            <summary>
+            List of all colors within ColorBrewer
+            </summary>
+        </member>
+        <member name="M:GraphLibrary.ColorBrewer.ReturnColorSchemeNamesWithNumberOfElements(GraphLibrary.ColorSchemeType,System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="numberOfElements"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GraphLibrary.ColorBrewer.ContainsNumberOfElements(GraphLibrary.ColorSchemeType,System.String,System.Int32)">
+            <summary>
+            Checks if color scheme has that number of elements.
+            </summary>
+            <param name="c"></param>
+            <param name="key"></param>
+            <param name="numberOfElements"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GraphLibrary.ColorBrewer.ConvertHexadecimalToColor(System.UInt32)">
+            <summary>
+            Convert hexadecimal value to color
+            </summary>
+            <param name="colorVal">uint value of color</param>
+            <returns>Color of uint</returns>
+        </member>
+        <member name="T:GraphLibrary.AttributeType">
+            <summary>
+            Defines which attribute to assign a column to
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeType.x">
+            <summary>
+            x-axis
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeType.y">
+            <summary>
+            y-axis
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeType.z">
+            <summary>
+            z-axis
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeType.time">
+            <summary>
+            time
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeType.color">
+            <summary>
+            color associated
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeType.shape">
+            <summary>
+            shape associated
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeType.size">
+            <summary>
+            size associated
+            </summary>
+        </member>
+        <member name="T:GraphLibrary.ShapeType">
+            <summary>
+            Defines what shape a point is
+            </summary>
+        </member>
+        <member name="T:GraphLibrary.AttributeOption">
+            <summary>
+            Defines limitations on an attribute
+            min, max, numberOfTicks, colorRange, colorAssignation, sizeRange
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeOption.min">
+            <summary>
+            Minimum value for attribute.
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeOption.max">
+            <summary>
+            Maximum value for attribute.
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeOption.numberOfTicks">
+            <summary>
+            Number of ticks for attribute.
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeOption.colorRange">
+            <summary>
+            Range of color for attribute
+            Use on continuous values for color.
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeOption.colorAssignation">
+            <summary>
+            Specific color assignation for unique dimensions.
+            Use on discrete values for color.
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeOption.sizeRange">
+            <summary>
+            Size range for attribute
+            </summary>
+        </member>
+        <member name="T:GraphLibrary.Dataset">
+            <summary>
+            Class that contains entire dataset information.
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.Dataset.dataValues">
+            <summary>
+            DataTable object containing all information from file.
+            </summary>
+        </member>
+        <member name="M:GraphLibrary.Dataset.#ctor">
+            <summary>
+            Empty Constructor for Dataset
+            </summary>
+        </member>
+        <member name="P:GraphLibrary.Dataset.columnNames">
+            <summary>
+            Column Names of dataset
+            </summary>
+        </member>
+        <member name="P:GraphLibrary.Dataset.numOfEntries">
+            <summary>
+            Number of rows within dataset
+            </summary>
+        </member>
+        <member name="M:GraphLibrary.Dataset.#ctor(System.String)">
+            <summary>
+            Constructor for dataset
+            </summary>
+            <param name="pathToFile">Full path to file for parsing.</param>
+        </member>
+        <member name="M:GraphLibrary.Dataset.GetMinimumOfColumn(System.String)">
+            <summary>
+            Get minimum value from a column in a dataset
+            </summary>
+            <param name="columnName">Column name in dataset</param>
+            <returns>Returns decimal value of minimum in column.</returns>
+        </member>
+        <member name="M:GraphLibrary.Dataset.GetMaximumOfColumn(System.String)">
+            <summary>
+            Get maximum value from a column in a dataset
+            </summary>
+            <param name="columnName">Column name in dataset</param>
+            <returns>Returns decimal value of maximum in column.</returns>
+        </member>
+        <member name="M:GraphLibrary.Dataset.GetUniqueValuesForColumn(System.String)">
+            <summary>
+            Gets all of the unique values within a column.
+            </summary>
+            <param name="columnName">Column to find unique values in.</param>
+            <returns>List of unique values within column.</returns>
+        </member>
+        <member name="M:GraphLibrary.Dataset.CheckValueAsMeasure(System.String)">
+            <summary>
+            Checks if column can be treated as a value
+            </summary>
+            <param name="columnName">Column name</param>
+            <returns>Whether column can be treated as a measure.</returns>
+        </member>
+        <member name="M:GraphLibrary.Dataset.ReturnPointValueByColumn(System.String,System.Int32)">
+            <summary>
+            Return value at specific row in column
+            </summary>
+            <param name="columnName">Column name</param>
+            <param name="index">Index of row</param>
+            <returns>Value at row and column</returns>
+        </member>
+        <member name="M:GraphLibrary.Dataset.ReturnRowByIndex(System.Int32)">
+            <summary>
+            Returns entire row at a specific index
+            </summary>
+            <returns>Dictionary of string and objects that contain the entire row</returns>
+        </member>
+        <member name="T:GraphLibrary.HelperFunctions">
+            <summary>
+            Helper functions for finding specific information from dataset
+            </summary>
+        </member>
+        <member name="M:GraphLibrary.HelperFunctions.GetPercentage(System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Gets the percentage of where the point sits according to the minimum and maximum.
+            </summary>
+            <param name="min">Minimum value for the column, or what the user wishes to view.</param>
+            <param name="max">Maximum value for the column, or what the user wishes to view.</param>
+            <param name="value">Value of current point.</param>
+            <returns>A percentage value between 0 and 1 if the point is within the min or maximum. Will return -1 if outside.</returns>
+        </member>
+        <member name="M:GraphLibrary.HelperFunctions.Split(System.String)">
+            <summary>
+            Split line by comma excluding commas included within quotations.
+            </summary>
+            <param name="line">Line to be parsed.</param>
+            <returns></returns>
+        </member>
+        <member name="T:GraphLibrary.Point">
+            <summary>
+            Class that is instantiated for each point. 
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.Point.pointIndex">
+            <summary>
+            Index of values within dataset
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.Point.pointAttributes">
+            <summary>
+            Dictionary of AttributeType and the value of that specific AttributeType.
+            All continuous values are normalized between 0 and 1 according to min and max of graph.
+            </summary>
+        </member>
+        <member name="M:GraphLibrary.Point.#ctor">
+            <summary>
+            Empty constructor for point.
+            </summary>
+        </member>
+        <member name="M:GraphLibrary.Point.#ctor(System.Int32)">
+            <summary>
+            Constructor of point containing the index of the point.
+            </summary>
+            <param name="index">Index of point in dataset.</param>
+        </member>
+        <member name="T:GraphLibrary.AttributeMappingObject">
+            <summary>
+            Struct that holds the attribute mapping of a column.
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeMappingObject.columnName">
+            <summary>
+            Name of the column in the dataset.
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.AttributeMappingObject.isMeasure">
+            <summary>
+            Whether the column should be treated as a measure or a dimension.
+            </summary>
+        </member>
+        <member name="M:GraphLibrary.AttributeMappingObject.#ctor(System.String,System.Boolean)">
+            <summary>
+            Constructor of AttributeMappingObject
+            </summary>
+            <param name="_columnName">Name of the column in the dataset.</param>
+            <param name="_isMeasure">Whether the column should be treated as a measure or a dimension.</param>
+        </member>
+        <member name="T:GraphLibrary.ScatterPlot">
+            <summary>
+            Class for individual scatter plots
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.ScatterPlot.points">
+            <summary>
+            List of Point class objects within the current scatter plot.
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.ScatterPlot.attributeMapping">
+            <summary>
+            Dictionary of AttributeType mapping to the column inside the dataset.
+            Key:    AttributeType
+            Value:  AttributeMappingObject that contains the column name and if it should be treated as a measure or dimension.
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.ScatterPlot.attributeOptions">
+            <summary>
+            Dictionary of AttributeType mapping to Dictionary of differing AttributeOptions and objects defining these
+            attributes.
+            Key:    AttributeType
+            Value:  Dictionary of AttributeOptions and object associated with the option
+            </summary>
+        </member>
+        <member name="F:GraphLibrary.ScatterPlot.datasetObject">
+            <summary>
+            Dataset of values within dataset.
+            </summary>
+        </member>
+        <member name="M:GraphLibrary.ScatterPlot.#ctor(GraphLibrary.Dataset)">
+            <summary>
+            Constructor for a scatterplot.
+            </summary>
+            <param name="d">Dataset passed in as parameter.</param>
+        </member>
+        <member name="M:GraphLibrary.ScatterPlot.AddAttributeToPoints(GraphLibrary.AttributeType,System.String,System.Boolean,System.Collections.Generic.Dictionary{GraphLibrary.AttributeOption,System.Object})">
+            <summary>
+            Associates column with attribute in the graph. Changes individual point information for graph.
+            </summary>
+            <param name="t">AttributeType with column.</param>
+            <param name="columnName">Column name in dataset</param>
+            <param name="isMeasure">Determines whether the. column should be treated as an attribute or a measure.</param>
+            <param name="limits">Dictionary of AttributeOptions that apply limitations to AttributeType.</param>
+        </member>
+        <member name="M:GraphLibrary.ScatterPlot.ChangeContinuousAxisValue(GraphLibrary.AttributeType,System.String,System.Collections.Generic.Dictionary{GraphLibrary.AttributeOption,System.Object})">
+            <summary>
+            Associates x, y or z axis to column on dataset.
+            </summary>
+            <param name="t">AttributeType with column</param>
+            <param name="columnName">Column name in dataset</param>
+            <param name="limits">Dictionary of AttributeOptions that apply limitations to AttributeType.</param>
+        </member>
+        <member name="M:GraphLibrary.ScatterPlot.ChangeDiscreteAxisValue(GraphLibrary.AttributeType,System.String)">
+            <summary>
+            Changes the axis value to discrete values
+            </summary>
+            <param name="t"></param>
+            <param name="columnName"></param>
+        </member>
+        <member name="M:GraphLibrary.ScatterPlot.ChangeContinuousColorValue(GraphLibrary.AttributeType,System.String,System.Collections.Generic.Dictionary{GraphLibrary.AttributeOption,System.Object})">
+            <summary>
+            Associates continuous color values to column in dataset.
+            </summary>
+            <param name="t">AttributeType with column</param>
+            <param name="columnName">Column name in dataset</param>
+            <param name="limits">Dictionary of AttributeOptions that apply limitations to AttributeType.</param>
+        </member>
+        <member name="M:GraphLibrary.ScatterPlot.ChangeDiscreteColorValue(GraphLibrary.AttributeType,System.String,System.Collections.Generic.Dictionary{GraphLibrary.AttributeOption,System.Object})">
+            <summary>
+            Associates discrete color values to column in dataset.
+            </summary>
+            <param name="t">AttributeType with column</param>
+            <param name="columnName">Column name in dataset</param>
+            <param name="limits">Dictionary of AttributeOptions that apply limitations to AttributeType.</param>
+        </member>
+        <member name="M:GraphLibrary.ScatterPlot.SetMinAndMaxForAttributeType(GraphLibrary.AttributeType,System.String,System.Int32,System.Collections.Generic.Dictionary{GraphLibrary.AttributeOption,System.Object})">
+            <summary>
+            Sets the minimum and maximum value in attributeOptions for a specific AttributeType
+            </summary>
+            <param name="t">AttributeType with column</param>
+            <param name="columnName">Column name in dataset</param>
+            <param name="numberOfTicks">Number of sections that axis is split into</param>
+            <param name="limits">Dictionary of AttributeOptions that apply limitations to AttributeType.</param>
+            <returns>decimal array with two elements. The first element is the minimum, second element is the maximum.</returns>
+        </member>
+        <member name="M:GraphLibrary.ScatterPlot.GetPercentageOfZero(System.String,GraphLibrary.AttributeType)">
+            <summary>
+            Gets the percentage of where zero sits within the minimum and maximum value.
+            </summary>
+            <param name="columnName">Column name</param>
+            <param name="t">AttributeType</param>
+            <returns></returns>
+        </member>
+        <member name="M:GraphLibrary.ScatterPlot.RemoveAttributeFromGraph(GraphLibrary.AttributeType)">
+            <summary>
+            Removes an attribute from the graph
+            </summary>
+            <param name="t">AttributeType value</param>
+        </member>
+    </members>
+</doc>
